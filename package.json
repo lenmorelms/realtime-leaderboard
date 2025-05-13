@@ -1,0 +1,31 @@
+{
+  "name": "realtime-leaderboard",
+  "version": "1.0.0",
+  "description": "A real-time leaderboard system for competitive games or activities. This backend API supports user authentication, score submission, leaderboard tracking, real-time updates via WebSockets, and historical reporting using Redis and MongoDB.",
+  "homepage": "https://github.com/lenmorelms/realtime-leaderboard#readme",
+  "bugs": {
+    "url": "https://github.com/lenmorelms/realtime-leaderboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lenmorelms/realtime-leaderboard.git"
+  },
+  "license": "ISC",
+  "author": "Learnmore Mombe",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "compression": "^1.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.14.2",
+    "morgan": "^1.10.0"
+  }
+}
