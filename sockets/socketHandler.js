@@ -1,20 +1,29 @@
 import { Server } from 'socket.io';
 
-let io;
+let io = null;
 
-const initSocket = (server) => {
-  const socketIo = new Server(server, {
-    cors: { origin: '*' }
+export const initSocket = (httpServer) => {
+  io = new Server(httpServer, {
+    cors: {
+      origin: '*', // or your frontend URL
+      methods: ['GET', 'POST'],
+    }
   });
 
-  socketIo.on('connection', (socket) => {
-    console.log(`Socket connected: ${socket.id}`);
-    socket.on('disconnect', () => console.log(`Socket disconnected: ${socket.id}`));
+  io.on('connection', (socket) => {
+    console.log('New client connected:', socket.id);
+
+    socket.on('disconnect', () => {
+      console.log('Client disconnected:', socket.id);
+    });
   });
 
-  io = socketIo;
+  return io;
 };
 
-const getIo = () => io;
-
-export { initSocket, getIo as io };
+export const getIO = () => {
+  if (!io) {
+    throw new Error('Socket.io not initialized');
+  }
+  return io;
+};

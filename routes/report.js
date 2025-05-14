@@ -1,8 +1,8 @@
 import express from "express";
 import topPlayersReport from "../controllers/reportController.js";
 
-const router = express.Router();
+const reportRoutes = express.Router();
 
-router.get('/reports/top', topPlayersReport);
+reportRoutes.get('/reports/top', topPlayersReport);
 
-export default router;
+export default reportRoutes;

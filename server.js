@@ -11,6 +11,6 @@ const PORT = process.env.PORT || 3000;
 
 (async () => {
   await connectDB();
-  // await createRedisClient();
+  await createRedisClient();
   server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 })();

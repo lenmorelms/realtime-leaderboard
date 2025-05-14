@@ -40,35 +40,55 @@ A real-time leaderboard system for competitive games or activities. This backend
 ---
 
 ## 📁 Project Structure
-src/
-│
-├── controllers/
-│ └── authController.js
-│ └── leaderboardController.js
-│ └── scoreController.js
-│
-├── models/
-│ └── User.js
-│ └── Score.js
-│
-├── routes/
-│ └── auth.js
-│ └── leaderboard.js
-│ └── score.js
-│
-├── middleware/
-│ └── authMiddleware.js
-│
-├── sockets/
-│ └── socketHandler.js
-│
 ├── config/
-│ └── db.js
-│ └── redis.js
-│
+│   └── redis.js
+├── controllers/
+│   ├── authController.js
+│   ├── leaderboardController.js
+│   └── scoreController.js
+├── models/
+│   ├── User.js
+│   └── Score.js
+├── routes/
+│   ├── auth.js
+│   ├── leaderboard.js
+│   ├── score.js
+│   └── report.js
+├── sockets/
+│   └── socketHandler.js
+├── .env
 ├── app.js
+├── server.js
+└── README.md
+
 └── server.js
 
-## Project Page On RoadmapO
-https://roadmap.sh/projects/realtime-leaderboard-system
+## 📦 Installation
+
+### 1. Clone the repository
+
+- git clone https://github.com/your-username/realtime-leaderboard.git
+- cd realtime-leaderboard
+
+### 2. Install dependencies
+
+- npm install
+
+### 3. Setup environment variables
+
+- PORT=5000
+- MONGODB_URI=mongodb://localhost:27017/leaderboard
+- JWT_SECRET=your_jwt_secret
+- REDIS_HOST=127.0.0.1
+- REDIS_PORT=6379
+
+### 4. Install redis on your local workspace
+
+### ▶️ Running the Server
+
+- npm run dev
+- The server will start on http://localhost:5000
+
+### Project Page On Roadmap
+- https://roadmap.sh/projects/realtime-leaderboard-system
 
